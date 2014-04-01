@@ -1,0 +1,22 @@
+#compdef cmgui
+#autoload
+
+_arguments : \
+  '-batch[batch mode]' \
+  '-cm[cmiss command file?]' \
+  '-cm_epath[path to cmiss examples directory]:directory:_files -/' \
+  '-cm_parameters[parameter file]:file:_files' \
+  '-command_list[command list]' \
+  '-console[console]' \
+  '--display[X11 display number]:X11 display number: ' \
+  '-epath[path to cmgui examples directory]:directory:_files -/' \
+  '-example[cmgui example id]:example id: ' \
+  '-execute[string to execute]:execute string: ' \
+  '-help[display cmgui help]' \
+  '-id[id]:id: ' \
+  '-mycm[mycm]' \
+  '-no_display[no display]' \
+  '-random[specify random number seed]:seed: ' \
+  '-server[server]' \
+  '-visual[visual]:number: ' \
+  '*:command file:_files -g "*.(com|cmgui)(-.)"'
