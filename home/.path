@@ -27,6 +27,11 @@ case $(hostname) in
         ;;
 
     sgiuv) # tom
+        # Module system (fix for GNU screen)
+        source /etc/profile.d/modules.sh
+        # Intel compilers and libraries
+        source /opt/intel/composer_xe_2011_sp1.7.256/bin/compilervars.sh intel64
+        module load mpt
         # Other paths
         export CM2CARP_ROOT=/scratch/bbl10/cm2carp
         ;;
