@@ -1,0 +1,15 @@
+
+which cmgui &> /dev/null && alias cmgui="UBUNTU_MENUPROXY= cmgui"
+
+if [ $(hostname) = crozier-pc ]; then
+    alias ex2ip=/home/acroz/experimental/cmgui/ex2ip
+fi
+
+if [ -n "$CM2CARP_ROOT" ]; then
+    alias residualPV=$CM2CARP_ROOT/scripts/active/residualPV.py
+    alias ptool=$CM2CARP_ROOT/scripts/pressure/ptool.py
+    alias cmguipreview=$CM2CARP_ROOT/viz/cmguipreview
+fi
+
+alias syncsim="rsync -av --include=\"*/\" --include=\"*.json\" --include=\"*cycle_PV.txt\" --exclude=\"*\""
+alias syncex="rsync -av --include=\"*/\" --include=\"*.ex*\"  --exclude=\"*\""

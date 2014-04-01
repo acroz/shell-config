@@ -1,0 +1,54 @@
+
+# Set up PATH and other path variables in all shells
+
+case $(hostname) in
+
+    crozier-pc)
+        # PATH
+        # Local commands
+        PATH=$HOME/bin:$PATH
+        # Python environment
+        PATH=$HOME/virtualenv/default/bin:$PATH
+        # Latex build
+        PATH=/usr/local/texlive/2013/bin/x86_64-linux:$PATH
+        INFOPATH=/usr/local/texlive/2013/texmf-dist/doc/info:$INFOPATH
+        MANPATH=/usr/local/texlive/2013/texmf-dist/doc/man:$MANPATH
+
+        # PYTHONPATH
+        # Experimental local scripts
+        PYTHONPATH=$PYTHONPATH:/home/acroz/experimental/
+
+        # Other paths
+        export CM2CARP_ROOT=/auto/nas/heart-nas/acroz/cm2carp
+        export VIRTUALENV_ROOT=$HOME/virtualenv
+        export MANAWANAS=/auto/nas/manawa-nas
+        export PREV_DATA_ROOTS="/home/acroz/grand_challenge /auto/nas/heart-nas/crtdata /auto/nas/heart-nas/bbl10/PVFitting /auto/nas/steve-nas/workflow/triv_old"
+        export ALL_DATA_ROOTS="$PREV_DATA_ROOTS /auto/nas/manawa-nas/workflow/triv"
+        ;;
+
+    sgiuv) # tom
+        # Other paths
+        export CM2CARP_ROOT=/scratch/bbl10/cm2carp
+        ;;
+
+    *)
+        # Ruby
+        PATH=$HOME/.rvm/bin:$PATH
+        source $HOME/.rvm/scripts/rvm
+
+esac
+
+if [ -n "$CM2CARP_ROOT" ]; then
+    PYTHONPATH=$PYTHONPATH:$CM2CARP_ROOT/scripts/
+    PYTHONPATH=$PYTHONPATH:$CM2CARP_ROOT/scripts/ensite/
+    export MECHROOT=$CM2CARP_ROOT/NewMech
+fi
+
+if [ -n "$VIRTUALENV_ROOT" ]; then
+    VIRTUAL_ENV_DISABLE_PROMPT="DISABLED" source $VIRTUALENV_ROOT/default/bin/activate
+fi
+
+export PATH=$PATH
+export INFOPATH=$INFOPATH
+export MANPATH=$MANPATH
+export PYTHONPATH=$PYTHONPATH
