@@ -33,8 +33,10 @@ case $(hostname) in
 
     *)
         # Ruby
-        PATH=$HOME/.rvm/bin:$PATH
-        source $HOME/.rvm/scripts/rvm
+        if [ -d $HOME/.rvm ]; then
+            PATH=$HOME/.rvm/bin:$PATH
+            source $HOME/.rvm/scripts/rvm
+        fi
 
 esac
 
