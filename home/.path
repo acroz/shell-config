@@ -26,6 +26,11 @@ case $(hostname) in
         export ALL_DATA_ROOTS="$PREV_DATA_ROOTS /auto/nas/manawa-nas/workflow/triv"
         ;;
 
+    andrew-mac.home)
+        PATH=/Applications/TkDiff.app/Contents/MacOS:$PATH
+        PATH=/usr/local/opt/ruby/bin:$PATH
+        ;;
+
     sgiuv) # tom
         # Module system (fix for GNU screen)
         source /etc/profile.d/modules.sh
