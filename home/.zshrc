@@ -45,7 +45,7 @@ autoload cv
 autoload cdpwd
 
 # Match ls colours and autocomplete colours
-eval `dircolors`
+eval `dircolors $HOME/.dircolors`
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 compinit
