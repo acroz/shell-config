@@ -32,6 +32,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git command-not-found colored-man pip zsh-syntax-highlighting)
+[[ $(uname -s) == "Darwin" ]] && plugins=(osx brew $plugins)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,7 +49,13 @@ autoload cv
 autoload cdpwd
 
 # Match ls colours and autocomplete colours
-eval `dircolors $HOME/.dircolors`
-zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
-autoload -Uz compinit
-compinit
+case $(uname -s) in
+    Darwin)
+        ;;
+    *)
+        eval `dircolors $HOME/.dircolors`
+        zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
+        autoload -Uz compinit
+        compinit
+        ;;
+esac
