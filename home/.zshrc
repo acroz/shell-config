@@ -31,7 +31,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git command-not-found dirhistory last-working-dir colored-man pip zsh-syntax-highlighting)
+plugins=(git command-not-found last-working-dir dirhistory colored-man pip zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
