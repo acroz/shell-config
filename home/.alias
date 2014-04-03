@@ -20,6 +20,6 @@ esac
 # OS Specific
 case $(uname) in
     Darwin)
-        alias ctags=$(brew --prefix ctags)
+        alias ctags=$(brew --prefix)/bin/ctags
         ;;
 esac
