@@ -45,6 +45,7 @@ case $(hostname) in
             PATH=$HOME/.rvm/bin:$PATH
             source $HOME/.rvm/scripts/rvm
         fi
+        ;;
 
 esac
 
