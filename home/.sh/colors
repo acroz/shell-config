@@ -1,10 +1,18 @@
 # Colour configuration setup
 
-# Adapted from https://github.com/jrid/zsh-jrid/blob/master/config/50-ls-colors.zsh
+# -----------------------------------------------------------------------------
+#  Modify ANSI color definitions
+# -----------------------------------------------------------------------------
+
+$HOME/.sh/bundle/base16-shell/base16-default.dark.sh
 
 # -----------------------------------------------------------------------------
-# Xterm console colors 
+#  ls colours setup
 # -----------------------------------------------------------------------------
+
+# Adapted from https://github.com/jrid/zsh-jrid/blob/master/config/50-ls-colors.zsh
+
+# Xterm console colors 
 # Color definitions for ls and complist module
 # 	Syntax: all *.avi files appear in bold purple -> *.avi=01;35 
 # 	color Codes 
