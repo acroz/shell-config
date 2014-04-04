@@ -48,14 +48,7 @@ fpath=($HOME/.zsh/functions $HOME/.zsh/completion $fpath)
 autoload cv
 autoload cdpwd
 
-# Match ls colours and autocomplete colours
-case $(uname -s) in
-    Darwin)
-        ;;
-    *)
-        eval `dircolors $HOME/.dircolors`
-        zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
-        autoload -Uz compinit
-        compinit
-        ;;
-esac
+# Load colour profile
+source $HOME/.lscolors
+# Assign LS_COLORS to zsh autocomplete
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
