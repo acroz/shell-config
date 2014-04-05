@@ -59,6 +59,11 @@ if [ -n "$VIRTUALENV_ROOT" ]; then
     VIRTUAL_ENV_DISABLE_PROMPT="DISABLED" source $VIRTUALENV_ROOT/default/bin/activate
 fi
 
+if [ -n "$MANAWANAS" ]; then
+    # For shorter displayed path in zsh
+    triv=$MANAWANAS/workflow/triv
+fi
+
 export PATH=$PATH
 export INFOPATH=$INFOPATH
 export MANPATH=$MANPATH
