@@ -40,14 +40,17 @@ case $(hostname) in
         # Other paths
         export CM2CARP_ROOT=/scratch/bbl10/cm2carp
 
-        # Ruby
-        if [ -d $HOME/.rvm ]; then
-            PATH=$HOME/.rvm/bin:$PATH
-            source $HOME/.rvm/scripts/rvm
-        fi
+        export scratch=/scratch/bbl10
+        export triv=$scratch/workflow/triv
         ;;
 
 esac
+
+# Ruby setup
+if [ -d $HOME/.rvm ]; then
+    PATH=$HOME/.rvm/bin:$PATH
+    source $HOME/.rvm/scripts/rvm
+fi
 
 if [ -n "$CM2CARP_ROOT" ]; then
     PYTHONPATH=$PYTHONPATH:$CM2CARP_ROOT/scripts/
