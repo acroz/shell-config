@@ -80,7 +80,7 @@ prompt_git() {
     setopt promptsubst
     
     # Disable vcs_info features on tom
-    if [[ $(hostname) != "sgiuv" ]]; then
+    if ! [[ $(hostname) =~ "^(sgiuv|eslogin[0-9]+)$" ]]; then
       autoload -Uz vcs_info
 
       zstyle ':vcs_info:*' enable git
