@@ -45,7 +45,7 @@ case $(hostname) in
         export triv=$scratch/workflow/triv
         ;;
 
-    eslogin+([0-9])) # archer
+    eslogin*) # archer
         # For compact prompt paths in zsh
         export work=/work/e104/e104/acroz
         export triv=$work/triv
