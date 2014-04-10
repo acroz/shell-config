@@ -1,7 +1,11 @@
 
 # Colourful shell
 export PS1="\n\[\e[1;35m\][\u@\h]\[\e[1;31m\]\w\$\[\e[m\] "
-source $HOME/.sh/colors
+case $(hostname) in
+    crozier-pc|andrew-mac.home)
+        source $HOME/.sh/colors
+        ;;
+esac
 
 # Get git extensions, and modify PS1 to show branch if it exists
 GITPROMPT=$HOME/.bash/git-prompt.sh
