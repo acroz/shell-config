@@ -29,6 +29,7 @@ case $(hostname) in
     andrew-mac.?*)
         PATH=/Applications/TkDiff.app/Contents/MacOS:$PATH
         PATH=/usr/local/opt/ruby/bin:$PATH
+        PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
         ;;
 
     sgiuv) # tom
