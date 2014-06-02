@@ -26,7 +26,7 @@ case $(hostname) in
         export ALL_DATA_ROOTS="$PREV_DATA_ROOTS /auto/nas/manawa-nas/workflow/triv"
         ;;
 
-    andrew-mac.home)
+    andrew-mac.?*)
         PATH=/Applications/TkDiff.app/Contents/MacOS:$PATH
         PATH=/usr/local/opt/ruby/bin:$PATH
         ;;
