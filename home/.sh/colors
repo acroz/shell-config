@@ -4,7 +4,7 @@
 #  Modify ANSI color definitions
 # -----------------------------------------------------------------------------
 
-$HOME/.sh/bundle/base16-shell/base16-monokai.dark.sh
+#$HOME/.sh/bundle/base16-shell/base16-monokai.dark.sh
 
 # -----------------------------------------------------------------------------
 #  ls colours setup
