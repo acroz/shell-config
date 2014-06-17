@@ -26,6 +26,22 @@ case $(hostname) in
         export ALL_DATA_ROOTS="$PREV_DATA_ROOTS /auto/nas/manawa-nas/workflow/triv"
         ;;
 
+    crozier-mug)
+        # PATH
+        # Local commands
+        PATH=$HOME/bin:$PATH
+        # CARP
+        PATH=$HOME/software/carp-dcse-pt/bin:$PATH
+
+        # CUDA Paths
+        PATH=/usr/local/cuda-6.0/bin:$PATH
+        LD_LIBRARY_PATH=/usr/local/cuda-6.0/lib64:$LD_LIBRARY_PATH
+
+        # PETSc
+        export PETSC_DIR=$HOME/software/petsc-3.4.4
+        export PETSC_ARCH=gnu-opt-ompi16
+        ;;
+
     andrew-mac.?*)
         PATH=/Applications/TkDiff.app/Contents/MacOS:$PATH
         PATH=/usr/local/opt/ruby/bin:$PATH
