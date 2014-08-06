@@ -64,7 +64,7 @@ case $(hostname) in
 
     eslogin*) # archer
         # For compact prompt paths in zsh
-        export work=/work/e348/e348/acroz
+        export work=/work/e348/e348/acr10
         export triv=$work/triv
 
         # pyhome
