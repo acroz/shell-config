@@ -66,6 +66,10 @@ case $(hostname) in
         # For compact prompt paths in zsh
         export work=/work/e104/e104/acroz
         export triv=$work/triv
+
+        # pyhome
+        PATH=$PATH:$HOME/tools/pyhome/bin
+        PYTHONPATH=$PYTHONPATH:$HOME/tools/pyhome
         ;;
 
 esac
