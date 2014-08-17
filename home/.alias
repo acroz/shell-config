@@ -15,6 +15,9 @@ case $(hostname) in
     crozier-pc)
         alias ex2ip=/home/acroz/experimental/cmgui/ex2ip
         ;;
+    crozier-mug)
+        alias spiderview=/home/andrew/software/tarantula/Tarantula2.0/bin/linux64/viewer_14032008
+        ;;
 esac
 
 # OS Specific

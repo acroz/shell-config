@@ -40,6 +40,9 @@ case $(hostname) in
         # PETSc
         export PETSC_DIR=$HOME/software/petsc-3.4.4
         export PETSC_ARCH=gnu-opt-ompi16
+        
+        # Other paths
+        export CM2CARP_ROOT=$HOME/software/cm2carp
         ;;
 
     andrew-mac.?*)
@@ -96,6 +99,7 @@ if [ -n "$MANAWANAS" ]; then
 fi
 
 export PATH=$PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 export INFOPATH=$INFOPATH
 export MANPATH=$MANPATH
 export PYTHONPATH=$PYTHONPATH
