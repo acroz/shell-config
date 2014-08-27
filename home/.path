@@ -30,15 +30,22 @@ case $(hostname) in
         # PATH
         # Local commands
         PATH=$HOME/bin:$PATH
+        PYTHONPATH=$PYTHONPATH:$HOME/software/python
         # CARP
-        PATH=$HOME/software/carp-dcse-pt/bin:$PATH
+        case $(uname -r) in
+            3.16.1-1-ARCH) PATH=$HOME/software-arch/carp/bin:$PATH ;;
+            *)             PATH=$HOME/software/carp-dcse-pt/bin:$PATH ;;
+        esac
 
         # CUDA Paths
         PATH=/usr/local/cuda-6.0/bin:$PATH
         LD_LIBRARY_PATH=/usr/local/cuda-6.0/lib64:$LD_LIBRARY_PATH
 
         # PETSc
-        export PETSC_DIR=$HOME/software/petsc-3.4.4
+        case $(uname -r) in
+            3.16.1-1-ARCH) export PETSC_DIR=$HOME/software-arch/petsc-3.4.4 ;;
+            *)             export PETSC_DIR=$HOME/software/petsc-3.4.4 ;;
+        esac
         export PETSC_ARCH=gnu-opt-ompi16
         
         # Other paths
