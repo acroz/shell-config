@@ -111,3 +111,9 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 export INFOPATH=$INFOPATH
 export MANPATH=$MANPATH
 export PYTHONPATH=$PYTHONPATH
+
+
+# OS Specific
+case $(uname -r) in
+    3.16.1-1-ARCH) systemctl --user import-environment ;;
+esac

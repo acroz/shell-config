@@ -1,5 +1,12 @@
 
-which cmgui &> /dev/null && alias cmgui="UBUNTU_MENUPROXY= cmgui"
+case $(hostname) in
+    crozier-mug)
+        which cmgui &> /dev/null && alias cmgui="UBUNTU_MENUPROXY= LD_LIBRARY_PATH=/usr/local/libpng-fix/lib:$LD_LIBRARY_PATH cmgui"
+        ;;
+    *)
+        which cmgui &> /dev/null && alias cmgui="UBUNTU_MENUPROXY= cmgui"
+        ;;
+esac
 
 if [ -n "$CM2CARP_ROOT" ]; then
     alias residualPV=$CM2CARP_ROOT/scripts/active/residualPV.py
@@ -16,7 +23,7 @@ case $(hostname) in
         alias ex2ip=/home/acroz/experimental/cmgui/ex2ip
         ;;
     crozier-mug)
-        alias spiderview=/home/andrew/software/tarantula/Tarantula2.0/bin/linux64/viewer_14032008
+        alias spiderview=$HOME/software/tarantula/Tarantula2.0/bin/linux64/viewer_14032008
         ;;
 esac
 
