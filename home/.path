@@ -29,27 +29,25 @@ case $(hostname) in
     crozier-mug)
         # PATH
         # Local commands
-        PATH=$HOME/bin:$PATH
-        PYTHONPATH=$PYTHONPATH:$HOME/software/python
+        PATH=$HOME/bin:$HOME/software/carputils/bin:$PATH
+        PYTHONPATH=$PYTHONPATH:$HOME/software/python:$HOME/software/carputils:$HOME/software/carp-tests
         # CARP
-        case $(uname -r) in
-            3.16.1-1-ARCH) PATH=$HOME/software-arch/carp/bin:$PATH ;;
-            *)             PATH=$HOME/software/carp-dcse-pt/bin:$PATH ;;
-        esac
+        PATH=$HOME/software-arch/carp/bin:$PATH
 
         # CUDA Paths
         PATH=/usr/local/cuda-6.0/bin:$PATH
         LD_LIBRARY_PATH=/usr/local/cuda-6.0/lib64:$LD_LIBRARY_PATH
 
         # PETSc
+        export PETSC_DIR=$HOME/software/petsc-3.4.4
         case $(uname -r) in
-            3.16.1-1-ARCH) export PETSC_DIR=$HOME/software-arch/petsc-3.4.4 ;;
-            *)             export PETSC_DIR=$HOME/software/petsc-3.4.4 ;;
+            *-ARCH) export PETSC_ARCH=gnu-opt-ompi18 ;;
+            *)      export PETSC_ARCH=gnu-opt-ompi16 ;;
         esac
-        export PETSC_ARCH=gnu-opt-ompi16
         
         # Other paths
         export triv=/data/triv
+        export MANAWANAS=/auto/nas/manawa-nas
         export CM2CARP_ROOT=$HOME/software/cm2carp
         ;;
 
