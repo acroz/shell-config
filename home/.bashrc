@@ -1,4 +1,12 @@
 
+
+case $(hostname) in
+    login*) # SuperMUC
+        export SHELL=/usr/bin/zsh
+        [ -z "$ZSH_VERSION" ] && exec /usr/bin/zsh -l
+        ;;
+esac
+
 # Colourful shell
 export PS1="\n\[\e[1;35m\][\u@\h]\[\e[1;31m\]\w\$\[\e[m\] "
 if shopt -q login_shell; then

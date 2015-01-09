@@ -1,6 +1,11 @@
 
 # Set up PATH and other path variables in all shells
 
+# Load Module environment
+if [ -n "$MODULESHOME" ]; then
+    source $MODULESHOME/init/zsh
+fi
+
 case $(hostname) in
 
     crozier-pc)
@@ -81,6 +86,32 @@ case $(hostname) in
         PYTHONPATH=$PYTHONPATH:$HOME/tools/pyhome
         ;;
 
+    login*) # SuperMUC
+        # Common paths
+        export work=$WORK
+        export common=/gpfs/work/pr87na/di68wid/common
+
+        # PATH and PYTHONPATH
+        PATH=$HOME/bin:$PATH
+        PYTHONPATH=$PYTHONPATH:$HOME/tools/pyhome
+
+        # Module loads
+        # General Tools
+        module load git/2.2
+        module load python/2.7.6
+        
+        # CARP Dependencies
+        module load prace
+        #module load petsc/3.3
+        module load hypre
+        module load mkl
+        module load parmetis
+        
+        # Custom PETSc
+        export PETSC_DIR=$common/install/petsc-3.4.3
+        export PETSC_ARCH=linux-gnu-ibm
+        ;;
+
 esac
 
 # Ruby setup
@@ -109,7 +140,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 export INFOPATH=$INFOPATH
 export MANPATH=$MANPATH
 export PYTHONPATH=$PYTHONPATH
-
 
 # OS Specific
 case $(uname -r) in
