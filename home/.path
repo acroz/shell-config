@@ -91,10 +91,6 @@ case $(hostname) in
         export work=$WORK
         export common=/gpfs/work/pr87na/di68wid/common
 
-        # PATH and PYTHONPATH
-        PATH=$HOME/bin:$PATH
-        PYTHONPATH=$PYTHONPATH:$HOME/tools/pyhome
-
         # Module loads
         # General Tools
         module load git/2.2
@@ -107,6 +103,10 @@ case $(hostname) in
         module load mkl
         module load parmetis
         
+        # PATH and PYTHONPATH
+        PATH=$HOME/bin:$PATH
+        PYTHONPATH=$PYTHONPATH:$HOME/tools/pyhome:$WORK/carputils
+
         # Custom PETSc
         export PETSC_DIR=$common/install/petsc-3.4.3
         export PETSC_ARCH=linux-gnu-ibm

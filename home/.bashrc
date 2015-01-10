@@ -1,10 +1,14 @@
 
-
-case $(hostname) in
-    login*) # SuperMUC
-        export SHELL=/usr/bin/zsh
-        [ -z "$ZSH_VERSION" ] && exec /usr/bin/zsh -l
-        ;;
+# Interactive shells only
+case $- in
+    *i*)
+        case $(hostname) in
+            login*) # SuperMUC
+                export SHELL=/usr/bin/zsh
+                [ -z "$ZSH_VERSION" ] && exec /usr/bin/zsh -l
+                ;;
+        esac
+    ;;
 esac
 
 # Colourful shell
