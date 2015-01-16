@@ -58,6 +58,9 @@ alias mpiexec="noglob mpiexec"
 alias carp.debug.petsc.pt="noglob carp.debug.petsc.pt"
 alias gdb="noglob gdb"
 
+# Temporary fix for grep
+unset GREP_OPTIONS
+
 # Sensible handling of vcs_info when it does not exist
 function zrcautoload() {
     emulate -L zsh
@@ -80,4 +83,3 @@ function zrcautoload() {
     return 0
 }
 zrcautoload vcs_info || vcs_info() {return 1}
-

@@ -37,7 +37,7 @@ case $(hostname) in
         PATH=$HOME/bin:$HOME/software/carputils/bin:$PATH
         PYTHONPATH=$PYTHONPATH:$HOME/software/python:$HOME/software/carputils:$HOME/software/carp-tests
         # CARP
-        PATH=$HOME/software-arch/carp/bin:$PATH
+        PATH=$HOME/software/carp/bin:$PATH
 
         # CUDA Paths
         PATH=/usr/local/cuda-6.0/bin:$PATH
