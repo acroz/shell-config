@@ -57,3 +57,27 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 alias mpiexec="noglob mpiexec"
 alias carp.debug.petsc.pt="noglob carp.debug.petsc.pt"
 alias gdb="noglob gdb"
+
+# Sensible handling of vcs_info when it does not exist
+function zrcautoload() {
+    emulate -L zsh
+    setopt extended_glob
+    local fdir ffile
+    local -i ffound
+
+    ffile=$1
+    (( found = 0 )) 
+    for fdir in ${fpath} ; do 
+        [[ -e ${fdir}/${ffile} ]] && (( ffound = 1 )) 
+    done 
+
+    (( ffound == 0 )) && return 1
+    if [[ $ZSH_VERSION == 3.1.<6-> || $ZSH_VERSION == <4->* ]] ; then 
+        autoload -U ${ffile} || return 1
+    else 
+        autoload ${ffile} || return 1
+    fi
+    return 0
+}
+zrcautoload vcs_info || vcs_info() {return 1}
+
