@@ -34,7 +34,7 @@ case $(hostname) in
     crozier-mug)
         # PATH
         # Local commands
-        PATH=$HOME/bin:$HOME/software/carputils/bin:$PATH
+        PATH=$HOME/bin:$HOME/software/carputils/bin:$HOME/software/segtools/bin:$PATH
         PYTHONPATH=$PYTHONPATH:$HOME/software/python:$HOME/software/carputils:$HOME/software/carp-tests
         # CARP
         PATH=$HOME/software/carp/bin:$PATH
@@ -44,9 +44,9 @@ case $(hostname) in
         LD_LIBRARY_PATH=/usr/local/cuda-6.0/lib64:$LD_LIBRARY_PATH
 
         # PETSc
-        export PETSC_DIR=$HOME/software/petsc-3.4.4
+        export PETSC_DIR=$HOME/software/petsc-3.6.0
         case $(uname -r) in
-            *-ARCH) export PETSC_ARCH=gnu-opt-ompi18 ;;
+            *-ARCH) export PETSC_ARCH=gnu-opt-mpich ;;
             *)      export PETSC_ARCH=gnu-opt-ompi16 ;;
         esac
         
@@ -54,6 +54,7 @@ case $(hostname) in
         export triv=/data/triv
         export MANAWANAS=/auto/nas/manawa-nas
         export CM2CARP_ROOT=$HOME/software/cm2carp
+        export CUDA_DIR=/opt/cuda
         ;;
 
     andrew-mac.?*)
