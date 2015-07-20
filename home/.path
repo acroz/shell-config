@@ -62,6 +62,26 @@ case $(hostname) in
         PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
         ;;
 
+    crozier-laptop)
+        # PATH
+        # Local commands
+        PATH=$HOME/bin:$HOME/software/carputils/bin:$PATH
+        PYTHONPATH=$PYTHONPATH:$HOME/software/carputils:$HOME/software/carp-tests
+        # CARP
+        PATH=$HOME/software/carp/bin:$PATH
+
+        # PETSc
+        export PETSC_DIR=$HOME/software/petsc-3.4.4
+        export PETSC_ARCH=gnu-opt-ompi
+
+        # Add mpiexec to path
+        PATH=$PETSC_DIR/$PETSC_ARCH/bin:$PATH
+
+        # Other paths
+        PATH=$HOME/software/segtools/bin:$PATH
+        ;;
+
+
     sgiuv) # tom
         # Module system (fix for GNU screen)
         source /etc/profile.d/modules.sh
