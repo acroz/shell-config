@@ -49,6 +49,7 @@ case $(hostname) in
             *-ARCH) export PETSC_ARCH=gnu-opt-mpich ;;
             *)      export PETSC_ARCH=gnu-opt-ompi16 ;;
         esac
+        PATH=$PETSC_DIR/$PETSC_ARCH/bin:$PATH
         
         # Other paths
         export triv=/data/triv
