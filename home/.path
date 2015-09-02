@@ -43,6 +43,9 @@ case $(hostname) in
         PATH=/usr/local/cuda-6.0/bin:$PATH
         LD_LIBRARY_PATH=/usr/local/cuda-6.0/lib64:$LD_LIBRARY_PATH
 
+        # DDT Debugger
+        PATH=/opt/allinea/forge/bin:$PATH
+
         # PETSc
         export PETSC_DIR=$HOME/software/petsc-3.6.0
         case $(uname -r) in
