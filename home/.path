@@ -35,7 +35,7 @@ case $(hostname) in
         # PATH
         # Local commands
         PATH=$HOME/bin:$HOME/software/carputils/bin:$HOME/software/segtools/bin:$PATH
-        PYTHONPATH=$PYTHONPATH:$HOME/software/python:$HOME/software/carputils:$HOME/software/carp-tests
+        PYTHONPATH=$PYTHONPATH:$HOME/software/python:$HOME/software/carputils:$HOME/software/carp-examples
         # CARP
         PATH=$HOME/software/carp/bin:$PATH
 
@@ -53,6 +53,9 @@ case $(hostname) in
             *)      export PETSC_ARCH=gnu-opt-ompi16 ;;
         esac
         PATH=$PETSC_DIR/$PETSC_ARCH/bin:$PATH
+
+        # Princeton Algorithms course
+        PATH=$HOME/coursera/algorithms/algs4/bin:$PATH
         
         # Other paths
         export triv=/data/triv
