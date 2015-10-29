@@ -87,6 +87,9 @@ case $(hostname) in
 
         # Other paths
         PATH=$HOME/software/segtools/bin:$PATH
+
+        # Princeton Algorithms course
+        PATH=$HOME/coursera/algorithms/algs4/bin:$PATH
         ;;
 
 
