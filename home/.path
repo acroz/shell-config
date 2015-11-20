@@ -47,11 +47,8 @@ case $(hostname) in
         PATH=/opt/allinea/forge/bin:$PATH
 
         # PETSc
-        export PETSC_DIR=$HOME/software/petsc-3.6.0
-        case $(uname -r) in
-            *-ARCH) export PETSC_ARCH=gnu-opt-mpich ;;
-            *)      export PETSC_ARCH=gnu-opt-ompi16 ;;
-        esac
+        export PETSC_DIR=$HOME/software/petsc-git
+        export PETSC_ARCH=gnu-opt-mpich
         PATH=$PETSC_DIR/$PETSC_ARCH/bin:$PATH
 
         # Princeton Algorithms course
