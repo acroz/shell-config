@@ -35,6 +35,7 @@ case $(hostname) in
         # PATH
         # Local commands
         PATH=$HOME/bin:$HOME/software/carputils/bin:$HOME/software/segtools/bin:$PATH
+        PATH=$HOME/software/carp-examples/cardioproof/bin:$PATH
         PYTHONPATH=$PYTHONPATH:$HOME/software/python:$HOME/software/carputils:$HOME/software/carp-examples
         # CARP
         PATH=$HOME/software/carp/bin:$PATH
@@ -42,6 +43,9 @@ case $(hostname) in
         # CUDA Paths
         PATH=/usr/local/cuda-6.0/bin:$PATH
         LD_LIBRARY_PATH=/usr/local/cuda-6.0/lib64:$LD_LIBRARY_PATH
+
+        # GDAL (VTK dependency)
+        LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
         # DDT Debugger
         PATH=/opt/allinea/forge/bin:$PATH

@@ -16,6 +16,7 @@ fi
 
 alias syncsim="rsync -av --include=\"*/\" --include=\"*.json\" --include=\"*cycle_PV.txt\" --exclude=\"*\""
 alias syncex="rsync -av --include=\"*/\" --include=\"*.ex*\"  --exclude=\"*\""
+alias gtop="watch -n 0.5 nvidia-smi"
 
 # Machine specific
 case $(hostname) in
