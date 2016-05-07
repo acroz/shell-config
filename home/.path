@@ -80,8 +80,8 @@ case $(hostname) in
         PATH=$HOME/software/carp/bin:$PATH
 
         # PETSc
-        export PETSC_DIR=$HOME/software/petsc-3.4.4
-        export PETSC_ARCH=gnu-opt-ompi
+        export PETSC_DIR=$HOME/software/petsc-git
+        export PETSC_ARCH=gnu-opt-mpich
 
         # Add mpiexec to path
         PATH=$PETSC_DIR/$PETSC_ARCH/bin:$PATH
