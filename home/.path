@@ -82,6 +82,7 @@ case $(hostname) in
 
         # Other paths
         PATH=$HOME/software/segtools/bin:$PATH
+        PATH=$HOME/.gem/ruby/2.3.0/bin:$PATH
 
         # Princeton Algorithms course
         PATH=$HOME/coursera/algorithms/algs4/bin:$PATH
