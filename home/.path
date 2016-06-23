@@ -34,9 +34,15 @@ case $(hostname) in
     crozier-mug)
         # PATH
         # Local commands
-        PATH=$HOME/bin:$HOME/software/carputils/bin:$HOME/software/segtools/bin:$PATH
+        # CARP Example Framework
+        PATH=$HOME/bin:$HOME/software/carputils/bin:$PATH
+        PYTHONPATH=$PYTHONPATH:$HOME/software/carputils:$HOME/software/carp-examples
+        # Other
+        PATH=$HOME/software/segtools/bin:$PATH
         PATH=$HOME/software/carp-examples/cardioproof/bin:$PATH
-        PYTHONPATH=$PYTHONPATH:$HOME/software/python:$HOME/software/carputils:$HOME/software/carp-examples
+        PATH=$HOME/software/cgalmesh/bin:$PATH
+        PYTHONPATH=$PYTHONPATH:$HOME/software/python
+
         # CARP
         PATH=$HOME/software/carp/bin:$PATH
 
@@ -57,6 +63,15 @@ case $(hostname) in
 
         # Princeton Algorithms course
         PATH=$HOME/coursera/algorithms/algs4/bin:$PATH
+
+        # Netgen
+        export NGROOT=$HOME/software/netgen
+        PATH=$NGROOT/bin:$PATH
+        export NETGENDIR=$NGROOT/bin
+        export DYLD_LIBRARY_PATH=$NGROOT/lib:$DYLD_LIBRARY_PATH
+
+        # SLEPc
+        export SLEPC_DIR=$HOME/software/slepc
         
         # Other paths
         export triv=/data/triv
