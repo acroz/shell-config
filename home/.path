@@ -80,12 +80,6 @@ case $(hostname) in
         export CUDA_DIR=/opt/cuda
         ;;
 
-    andrew-mac.?*)
-        PATH=/Applications/TkDiff.app/Contents/MacOS:$PATH
-        PATH=/usr/local/opt/ruby/bin:$PATH
-        PATH="/Applications/Sublime Text.app/Contents/SharedSupport/bin:$PATH"
-        ;;
-
     crozier-laptop)
         # PATH
         # Local commands
@@ -95,8 +89,8 @@ case $(hostname) in
         PATH=$HOME/software/carp/bin:$PATH
 
         # PETSc
-        export PETSC_DIR=$HOME/software/petsc-3.4.4
-        export PETSC_ARCH=gnu-opt-ompi
+        export PETSC_DIR=$HOME/software/petsc-git
+        export PETSC_ARCH=gnu-opt-mpich
 
         # Add mpiexec to path
         PATH=$PETSC_DIR/$PETSC_ARCH/bin:$PATH
