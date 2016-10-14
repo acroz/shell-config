@@ -69,7 +69,7 @@ case $(hostname) in
         # PATH
         # Local commands
         PATH=$HOME/bin:$HOME/software/carputils/bin:$PATH
-        PYTHONPATH=$PYTHONPATH:$HOME/software/carputils:$HOME/software/carp-tests
+        PYTHONPATH=$PYTHONPATH:$HOME/software/carputils:$HOME/software/carp-examples
         # CARP
         PATH=$HOME/software/carp/bin:$PATH
 
@@ -85,6 +85,12 @@ case $(hostname) in
 
         # Princeton Algorithms course
         PATH=$HOME/coursera/algorithms/algs4/bin:$PATH
+
+        # ASI
+        export CENSUS_CACHE_DIRECTORY=$HOME/software/postcode/census_cache
+
+        # GO
+        export GOPATH=$HOME/software/go
         ;;
 
 
