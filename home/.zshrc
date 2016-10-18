@@ -49,7 +49,7 @@ autoload cv
 autoload cdpwd
 
 # Load colour profile
-source $HOME/.sh/colors
+source $HOME/.sh/colours.sh
 # Assign LS_COLORS to zsh autocomplete
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
