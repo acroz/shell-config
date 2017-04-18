@@ -1,4 +1,3 @@
-
 # Set up PATH and other path variables in all shells
 
 # Load Module environment
@@ -72,7 +71,7 @@ case $(hostname) in
 
         # SLEPc
         export SLEPC_DIR=$HOME/software/slepc
-        
+
         # Other paths
         export triv=/data/triv
         export MANAWANAS=/auto/nas/manawa-nas
@@ -102,12 +101,11 @@ case $(hostname) in
         PATH=$HOME/coursera/algorithms/algs4/bin:$PATH
 
         # ASI
-        export CENSUS_CACHE_DIRECTORY=$HOME/software/postcode/census_cache
+        export CENSUS_DATASETS_DIRECTORY=$HOME/software/postcode/census_cache
 
         # GO
         export GOPATH=$HOME/software/go
         ;;
-
 
     sgiuv) # tom
         # Module system (fix for GNU screen)
@@ -142,14 +140,14 @@ case $(hostname) in
         # General Tools
         module load git/2.2
         module load python/2.7.6
-        
+
         # CARP Dependencies
         module load prace
         #module load petsc/3.3
         module load hypre
         module load mkl
         module load parmetis
-        
+
         # PATH and PYTHONPATH
         PATH=$HOME/bin:$PATH
         PYTHONPATH=$PYTHONPATH:$HOME/tools/pyhome:$WORK/carputils
