@@ -54,8 +54,6 @@ source $HOME/.sh/colours.sh
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # Programs to avoid globbing
-alias mpiexec="noglob mpiexec"
-alias carp.debug.petsc.pt="noglob carp.debug.petsc.pt"
 alias gdb="noglob gdb"
 
 # Temporary fix for grep
